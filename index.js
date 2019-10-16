@@ -47,24 +47,63 @@ const g = document.querySelector('.team_photo6').onclick = function () {
   console.log(g);
 };
 
+var slides = document.querySelectorAll('#slides .slide');
+let sq = document.querySelectorAll('.square1')
+var currentSlide = 0;
 
-// /*eslint-disable*/
-// jQuery('.lightzoom').lightzoom();
-// // eslint-disable-next-line no-undef
-// (function ($) {
-//   // eslint-disable-next-line no-undef
-//   $( '.lightzoom' ).lightzoom({
-//     // eslint-disable-next-line no-undef
-//     speed: 1000,   // скорость появления
-//     imgPadding: 10,
-//     overlayOpacity: '0.5',
-//     viewTitle: true,
-//     isOverlayClickClosing: true,
-//     isWindowClickClosing: true,
-//     isEscClosing: true
-//       } );
-//     })( jQuery );
+document.getElementById('prev').onclick = function nextSlide() {
+    slides[currentSlide].className = 'slide';
+    sq[currentSlide].className='square1';
+    currentSlide = (currentSlide-1)%slides.length;
+    if(currentSlide<0) currentSlide=slides.length-1;
+    slides[currentSlide].className = 'slide showing';
+    sq[currentSlide].className='square1 chosen_sq';
+}
+document.getElementById('next').onclick = function nextSlide() {
+    slides[currentSlide].className = 'slide';
+    sq[currentSlide].className='square1';
+    currentSlide = (currentSlide+1)%slides.length;
+    slides[currentSlide].className = 'slide showing';
+    sq[currentSlide].className='square1 chosen_sq';
+}
 
-// alert('fff')
-//     const a = document.getElementByClassName('team_photo2');
-//     console.log(a);
+document.querySelector('.square6').onclick = function show() {
+  document.querySelector('.square6').className='square_ch square square6'
+  document.querySelector('.square7').className='square square7'
+  document.querySelector('.square8').className='square square8'
+  document.querySelector('.square9').className='square square9'
+  document.querySelector('.a1').className='apple_img1 a1 '
+  document.querySelector('.a2').className='apple_img1 a2 apple_img4'
+  document.querySelector('.a3').className='apple_img1 a3 apple_img4'
+  document.querySelector('.a4').className='apple_img1 a4 apple_img4'
+}
+document.querySelector('.square7').onclick = function show() {
+  document.querySelector('.square7').className='square_ch square square7'
+  document.querySelector('.square6').className='square square6'
+  document.querySelector('.square8').className='square square8'
+  document.querySelector('.square9').className='square square9'
+  document.querySelector('.a1').className='apple_img1 a1 apple_img4'
+  document.querySelector('.a2').className='apple_img1 a2 '
+  document.querySelector('.a3').className='apple_img1 a3 apple_img4'
+  document.querySelector('.a4').className='apple_img1 a4 apple_img4'
+}
+document.querySelector('.square8').onclick = function show() {
+  document.querySelector('.square8').className='square_ch square square8'
+  document.querySelector('.square7').className='square square7'
+  document.querySelector('.square6').className='square square6'
+  document.querySelector('.square9').className='square square9'
+  document.querySelector('.a1').className='apple_img1 a1 apple_img4'
+  document.querySelector('.a2').className='apple_img1 a2 apple_img4'
+  document.querySelector('.a3').className='apple_img1 a3 '
+  document.querySelector('.a4').className='apple_img1 a4 apple_img4'
+}
+document.querySelector('.square9').onclick = function show() {
+  document.querySelector('.square9').className='square_ch square square9'
+  document.querySelector('.square7').className='square square7'
+  document.querySelector('.square8').className='square square8'
+  document.querySelector('.square6').className='square square6'
+  document.querySelector('.a1').className='apple_img1 a1 apple_img4'
+  document.querySelector('.a2').className='apple_img1 a2 apple_img4'
+  document.querySelector('.a3').className='apple_img1 a3 apple_img4'
+  document.querySelector('.a4').className='apple_img1 a4 '
+}
