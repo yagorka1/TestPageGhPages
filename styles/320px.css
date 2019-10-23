@@ -259,6 +259,10 @@
   height: 500px;
 }
 
+.logo_item {
+  margin-bottom: 25px;
+}
+
 .row2, .row1 {
   width: 320px;
 }
@@ -276,7 +280,7 @@
     font-size: 8pt;
   }
 
-  .apple_img12 {
+  .pic_size {
     width: 270px;
   }
 
@@ -298,5 +302,10 @@
 
   .about_us_slides2 {
    width: 320px;
+  }
+
+  .team_text {
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
